@@ -1,0 +1,35 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryMgr.IOS", "InventoryMgr.IOS\InventoryMgr.IOS.csproj", "{5DCD9BAF-7A6A-45EE-A462-0A13EBB73513}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "InventoryMgr.Shared", "InventoryMgr.Shared\InventoryMgr.Shared.shproj", "{23B9F6AB-34F4-4415-A644-6B7EA261DC07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManager.Macos", "InventoryManager.Macos\InventoryManager.Macos.csproj", "{FD057FB1-FBFC-47DD-ADFC-EDA6E2A21063}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5DCD9BAF-7A6A-45EE-A462-0A13EBB73513}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{5DCD9BAF-7A6A-45EE-A462-0A13EBB73513}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{5DCD9BAF-7A6A-45EE-A462-0A13EBB73513}.Release|iPhone.ActiveCfg = Release|iPhone
+		{5DCD9BAF-7A6A-45EE-A462-0A13EBB73513}.Release|iPhone.Build.0 = Release|iPhone
+		{5DCD9BAF-7A6A-45EE-A462-0A13EBB73513}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{5DCD9BAF-7A6A-45EE-A462-0A13EBB73513}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{5DCD9BAF-7A6A-45EE-A462-0A13EBB73513}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{5DCD9BAF-7A6A-45EE-A462-0A13EBB73513}.Debug|iPhone.Build.0 = Debug|iPhone
+		{FD057FB1-FBFC-47DD-ADFC-EDA6E2A21063}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{FD057FB1-FBFC-47DD-ADFC-EDA6E2A21063}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{FD057FB1-FBFC-47DD-ADFC-EDA6E2A21063}.Release|iPhone.ActiveCfg = Release|iPhoneSimulator
+		{FD057FB1-FBFC-47DD-ADFC-EDA6E2A21063}.Release|iPhone.Build.0 = Release|iPhoneSimulator
+		{FD057FB1-FBFC-47DD-ADFC-EDA6E2A21063}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{FD057FB1-FBFC-47DD-ADFC-EDA6E2A21063}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{FD057FB1-FBFC-47DD-ADFC-EDA6E2A21063}.Debug|iPhone.ActiveCfg = Debug|iPhoneSimulator
+		{FD057FB1-FBFC-47DD-ADFC-EDA6E2A21063}.Debug|iPhone.Build.0 = Debug|iPhoneSimulator
+	EndGlobalSection
+EndGlobal
