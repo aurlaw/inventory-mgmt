@@ -1,5 +1,5 @@
-﻿//
-// Main.cs
+//
+// Roving.cs
 //
 // Author:
 //       Michael Lawrence <mlawrence@aurlaw.com>
@@ -23,18 +23,35 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-using UIKit;
-
-namespace InventoryMgr.IOS
+using System;
+namespace InventoryMgr.Shared.Models
 {
-	public class Application
+	public class Roving : IInventory
 	{
-		// This is the main entry point of the application.
-		static void Main(string[] args)
+		public string ID { get; set; }
+		public string Name { get; set; }
+		public decimal Price { get; set; }
+		public int Qty { get; set; }
+		public DateTime DateCreated { get; set; }
+		public DateTime DateModified { get; set; }
+		public InventoryType InventoryType
 		{
-			// if you want to use a different Application Delegate class from "AppDelegate"
-			// you can specify it here.
-			UIApplication.Main(args, null, "AppDelegate");
+			get { return InventoryType.ROVING; }
+		}
+		public string Materials { get; set; }
+		public string Weight { get; set; }
+		public string Length { get; set; }
+
+		public Roving()
+		{
 		}
 	}
 }
+
+/*
+ * 
+ * Define more properties as needed
+ * 
+* Image (attachment) - multiple?
+
+*/

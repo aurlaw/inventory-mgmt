@@ -1,5 +1,5 @@
 ﻿//
-// Main.cs
+// IInventory.cs
 //
 // Author:
 //       Michael Lawrence <mlawrence@aurlaw.com>
@@ -23,18 +23,18 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-using UIKit;
-
-namespace InventoryMgr.IOS
+using System;
+namespace InventoryMgr.Shared.Models
 {
-	public class Application
+	public interface IInventory
 	{
-		// This is the main entry point of the application.
-		static void Main(string[] args)
-		{
-			// if you want to use a different Application Delegate class from "AppDelegate"
-			// you can specify it here.
-			UIApplication.Main(args, null, "AppDelegate");
-		}
+		string ID { get; set; }
+		string Name { get; set; }
+		decimal Price { get; set; }
+		int Qty { get; set; }
+		DateTime DateCreated { get; set; }
+		DateTime DateModified { get; set; }
+		InventoryType InventoryType { get; }
 	}
 }
+

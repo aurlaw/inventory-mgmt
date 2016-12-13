@@ -1,5 +1,5 @@
 ﻿//
-// Main.cs
+// Extensions.cs
 //
 // Author:
 //       Michael Lawrence <mlawrence@aurlaw.com>
@@ -23,18 +23,36 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-using UIKit;
 
-namespace InventoryMgr.IOS
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using InventoryMgr.Shared.Models;
+namespace InventoryMgr.Shared
 {
-	public class Application
+	public static class Extensions
 	{
-		// This is the main entry point of the application.
-		static void Main(string[] args)
+
+		public static Dictionary<string, object> ToDictionary<T>(this T data) where T: IInventory
 		{
-			// if you want to use a different Application Delegate class from "AppDelegate"
-			// you can specify it here.
-			UIApplication.Main(args, null, "AppDelegate");
+			return data.GetType()
+				.GetProperties()
+				.Select(pi => new { Name = pi.Name, Value = pi.GetValue(data, null) })
+				.ToDictionary(ks => ks.Name, vs => vs.Value);
 		}
+
+		public static T FromDictionary<T>(this Dictionary<string, object> dict) where T : IInventory
+		{
+			Type type = typeof(T);
+			var obj = Activator.CreateInstance(type);
+
+			foreach (var kv in dict)
+			{
+				type.GetProperty(kv.Key).SetValue(obj, kv.Value);
+			}
+			return (T)obj;
+		}
+
 	}
+
 }

@@ -10,5 +10,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)CouchbaseEvents.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\InventoryType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\IInventory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Skein.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Roving.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Settings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\InventoryItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IDataManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IInventoryService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IReplicationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ISettingsService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Bootstrap.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\" />
   </ItemGroup>
 </Project>

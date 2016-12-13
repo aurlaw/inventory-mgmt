@@ -1,5 +1,5 @@
 ﻿//
-// Main.cs
+// IDataManager.cs
 //
 // Author:
 //       Michael Lawrence <mlawrence@aurlaw.com>
@@ -23,18 +23,24 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-using UIKit;
-
-namespace InventoryMgr.IOS
+using System;
+namespace InventoryMgr.Shared.Services
 {
-	public class Application
+	public interface IDataManager
 	{
-		// This is the main entry point of the application.
-		static void Main(string[] args)
-		{
-			// if you want to use a different Application Delegate class from "AppDelegate"
-			// you can specify it here.
-			UIApplication.Main(args, null, "AppDelegate");
-		}
 	}
 }
+/*
+ * 
+ * Should be abstract, works with dictionaries not models
+ * 
+Create
+Update
+Delete
+GetById
+Find
+FindAll
+FindByType
+Replication
+
+*/
