@@ -1,5 +1,5 @@
 ﻿//
-// Extensions.cs
+// CouchManager.cs
 //
 // Author:
 //       Michael Lawrence <mlawrence@aurlaw.com>
@@ -23,37 +23,53 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using InventoryMgr.Shared.Models;
-namespace InventoryMgr.Shared
+using Couchbase.Lite;
+using Couchbase.Lite.Auth;
+
+
+namespace InventoryMgr.Shared.Services
 {
-	public static class Extensions
+	public class CouchManager : IDataManager
 	{
+		const string DB_NAME = "inventory-mgmt";
+		Database db;
 
-		public static IDictionary<string, object> ToDictionary<T>(this T data) where T: IInventory
+		public CouchManager()
 		{
-			return data.GetType()
-				.GetProperties()
-				.Select(pi => new { Name = pi.Name, Value = pi.GetValue(data, null) })
-				.ToDictionary(ks => ks.Name, vs => vs.Value);
+			Couchbase.Lite.Storage.SystemSQLite.Plugin.Register();
+			db = Manager.SharedInstance.GetDatabase(DB_NAME);
 		}
 
-		public static T FromDictionary<T>(this IDictionary<string, object> dict) where T : IInventory
+		public string Create(Dictionary<string, object> dataProps)
 		{
-			Type type = typeof(T);
-			var obj = Activator.CreateInstance(type);
+			var doc = db.CreateDocument();
+			var docId = doc.Id;
+			doc.PutProperties(dataProps);
+			return docId;
+		}
 
-			foreach (var kv in dict)
+		public void Delete(string id)
+		{
+			var doc = db.GetDocument(id);
+			doc.Delete();
+		}
+
+		public IDictionary<string, object> GetById(string id)
+		{
+			var doc = db.GetDocument(id);
+			return doc.Properties;
+		}
+
+		public void Update(string id, Dictionary<string, object> dataProps)
+		{
+			var doc = db.GetDocument(id);
+			if (doc != null)
 			{
-				if(type.GetProperty(kv.Key).CanWrite)
-					type.GetProperty(kv.Key).SetValue(obj, kv.Value);
+				// Save to the Couchbase local Couchbase Lite DB
+				doc.PutProperties(dataProps);
 			}
-			return (T)obj;
 		}
-
 	}
-
 }

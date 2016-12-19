@@ -7,6 +7,8 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "InventoryMgr.Shared", "Inve
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManager.Macos", "InventoryManager.Macos\InventoryManager.Macos.csproj", "{FD057FB1-FBFC-47DD-ADFC-EDA6E2A21063}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryMgr.Tests", "InventoryMgr.Tests\InventoryMgr.Tests.csproj", "{CD3B181D-CB92-4D0D-8220-DC1F3DCAF363}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -31,6 +33,14 @@ Global
 		{FD057FB1-FBFC-47DD-ADFC-EDA6E2A21063}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{FD057FB1-FBFC-47DD-ADFC-EDA6E2A21063}.Debug|iPhone.ActiveCfg = Debug|iPhoneSimulator
 		{FD057FB1-FBFC-47DD-ADFC-EDA6E2A21063}.Debug|iPhone.Build.0 = Debug|iPhoneSimulator
+		{CD3B181D-CB92-4D0D-8220-DC1F3DCAF363}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{CD3B181D-CB92-4D0D-8220-DC1F3DCAF363}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{CD3B181D-CB92-4D0D-8220-DC1F3DCAF363}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{CD3B181D-CB92-4D0D-8220-DC1F3DCAF363}.Release|iPhone.Build.0 = Release|Any CPU
+		{CD3B181D-CB92-4D0D-8220-DC1F3DCAF363}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{CD3B181D-CB92-4D0D-8220-DC1F3DCAF363}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{CD3B181D-CB92-4D0D-8220-DC1F3DCAF363}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{CD3B181D-CB92-4D0D-8220-DC1F3DCAF363}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0

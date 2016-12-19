@@ -24,10 +24,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 using System;
+using System.Collections.Generic;
+
 namespace InventoryMgr.Shared.Services
 {
 	public interface IDataManager
 	{
+		string Create(Dictionary<string, object> dataProps);
+		void Update(string id, Dictionary<string, object> dataProps);
+		void Delete(string id);
+		IDictionary<string, object> GetById(string id);
 	}
 }
 /*
@@ -38,9 +44,10 @@ Create
 Update
 Delete
 GetById
+
+FindByType
 Find
 FindAll
-FindByType
 Replication
 
 */
